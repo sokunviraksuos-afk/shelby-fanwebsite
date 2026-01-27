@@ -28,7 +28,7 @@ https://sokunviraksuos-afk.github.io/shelby-fanwebsite/
 ## 🛠️ Technologies Used
 
 - HTML  
-- CSS (if applicable)
+- CSS
 
 ## 📌 Notes
 
