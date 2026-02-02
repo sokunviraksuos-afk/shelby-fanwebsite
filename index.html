@@ -1,89 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GT350</title>
-  <link rel="icon" href="Resources/Shelby-Logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT350</title>
+    <link rel="icon" type="image/x-icon" href="Resources/shelby-favicon.png">
 </head>
+<style>
+    ::-webkit-scrollbar{
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track{
+        background: #070707;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: #191919;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+        background: #222222;
+    }
+    body{
+        background-color: black;
+        color: white;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .header{
+        width: 100%;
+        min-height: 5vh;
+        background-color: #070707;
+        position: fixed;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header-icon{
+        width: 5vh;
+        height: 5vh;
+        background-color: white;
+        background-image: url(Resources/shelby-favicon.png);
+        background-size: 4vh;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .header-text{
+        font-size: 3vh;
+        margin-left: 1vh;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .top-container{
+        width: 100%;
+        height: 1080px;
+        overflow: hidden;
+        background-image: url(Resources/1\ Shelby\ Mustang.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .love-letter{
+        position: relative;
+        text-align: center;
+        font-size: 175%;
+        margin-top: 200px;
+    }
+    .ford-shelby-headline{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 200%;
+        font-weight: bolder;
+    }
+    .gt350-headline{
+        margin-top: -10px;
+        text-align: center;
+        font-size: 700%;
+    }
+    .hook-container{
+        max-width: 1200px;
+        margin-inline: auto;
+        margin-top: 360px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hook-text{
+        max-width: 500px;
+    }
+    .hook-text h1{
+        margin: 20px;
+        font-size: 275%;
+        font-weight: lighter;
+    }
+    .hook-text p{
+        margin: 20px;
+        font-size: 200%;
+        font-weight: lighter;
+    }
+    .hook-image{
+        min-width: 350px;
+        height: 600px;
+        background-image: url(Resources/2\ Shelby\ Mustang.png);
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .hook-image:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .design-features-headline{
+        margin-top: 360px;
+        font-size: 450%;
+        text-align: center;
+    }
+    .design-features-container{
+        width: 100%;
+        margin-inline: auto;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /*item1 exterior*/
+    .design-features-exterior{
+        min-width: 30vh;
+        max-width: 40vh;
+        height: 100%;
+        flex: 1;
+        margin: 20px;
+    }
+    .design-features-exterior-image{
+        width: 100%;
+        height: 30vh;
+        background-image: url(Resources/3\ Shelby\ Mustang.png);
+        background-position: center;
+        background-size: cover;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .design-features-exterior-image:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .design-features-exterior-text{
+        margin-top: 20px;
+    }
+    .design-features-exterior h1{
+        font-size: 275%;
+        margin: 20px;
+    }
+    .design-features-exterior p{
+        font-size: 200%;
+        margin: 20px;
+    }
+    /*item2 interior*/
+    .design-features-interior{
+        min-width: 30vh;
+        max-width: 40vh;
+        height: 100%;
+        flex: 1;
+        margin: 20px;
+    }
+    .design-features-interior-image{
+        width: 100%;
+        height: 30vh;
+        background-image: url(Resources/4\ Shelby\ Mustang.png);
+        background-position: center;
+        background-size: cover;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .design-features-interior-image:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .design-features-interior-text{
+        margin-top: 20px;
+    }
+    .design-features-interior h1{
+        font-size: 275%;
+        margin: 20px;
+    }
+    .design-features-interior p{
+        font-size: 200%;
+        margin: 20px;
+    }
+    /*item3 suspention*/
+    .design-features-suspention{
+        min-width: 30vh;
+        max-width: 40vh;
+        height: 100%;
+        flex: 1;
+        margin: 20px;
+    }
+    .design-features-suspention-image{
+        width: 100%;
+        height: 30vh;
+        background-image: url(Resources/5\ Shelby\ Mustang.png);
+        background-position: center;
+        background-size: cover;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .design-features-suspention-image:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .design-features-suspention-text{
+        margin-top: 20px;
+    }
+    .design-features-suspention h1{
+        font-size: 275%;
+        margin: 20px;
+    }
+    .design-features-suspention p{
+        font-size: 200%;
+        margin: 20px;
+    }
+    .engine-performance-container{
+        max-width: 1200px;
+        margin-inline: auto;
+        margin-top: 360px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row-reverse;
+    }
+    .engine-performance-text{
+        max-width: 500px;
+    }
+    .engine-performance-text h1{
+        margin: 20px;
+        font-size: 275%;
+        font-weight: lighter;
+    }
+    .engine-performance-text p{
+        margin: 20px;
+        font-size: 200%;
+        margin-top: 200px;
+        font-weight: lighter;
+    }
+    .engine-performance-image{
+        min-width: 350px;
+        height: 600px;
+        background-image: url(Resources/6\ Shelby\ Mustang.png);
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .engine-performance-image:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .aggressive-aerodynamic-design-container{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin-inline: auto;
+        margin-top: 360px;
+        justify-content: center;
+    }
+    .aggressive-aerodynamic-design-item1{
+        width: 400px;
+    }
+    .aggressive-aerodynamic-design-exhaust{
+        min-width: 350px;
+        height: 500px;
+        background-image: url(Resources/7\ Shelby\ Mustang.png);
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+    }
+    .aggressive-aerodynamic-design-text{
+        margin: 20px;
+        font-size: 200%;
+    }
+    .aggressive-aerodynamic-design-item2{
+        min-width: 350px;
+        background-image: url(Resources/8\ Shelby\ Mustang.png);
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+    }
+    .heritage-container{
+        width: 100%;
+        height: 1080px;
+        margin-top: 360px;
+        background-image: url(Resources/9\ Shelby\ Mustang.png);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .heritage-headline{
+        width: 100%;
+        font-size: 450%;
+        margin: auto;
+        text-align: center;
+    }
+    .carroll-shelby-text{
+        margin: 60px;
+        width: 360px;
+        font-size: 200%;
+        align-self: flex-end;
+
+    }
+    .modern-homage-text{
+        margin: 60px;
+        width: 360px;
+        font-size: 200%;
+        align-self: flex-end;
+    }
+    .contact{
+        height: 1080px;
+    }
+    .contact-headline{
+        font-size: 275%;
+        margin-top: 240px;
+        text-align: center;
+    }
+    .contact-container{
+        max-width: 1600px;
+        height: 900px;
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .contact-shelby{
+        width: 360px;
+        height: 360px;
+        margin: 20px;
+        background-color: #1f1f1f;
+        background-image: url(Resources/shelby-favicon.png);
+        background-size: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .contact-shelby:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .contact-instagram{
+        width: 360px;
+        height: 360px;
+        margin: 20px;
+        background-color: #1f1f1f;
+        background-image: url(Resources/Instagram-Logo.png);
+        background-size: cover;
+
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .contact-instagram:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .contact-ibg{
+        width: 360px;
+        height: 360px;
+        margin: 20px;
+        background-color: #1f1f1f;
+        background-image: url(Resources/IBG-Logo.png);
+        background-size: cover;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .contact-ibg:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+    .contact-behance{
+        width: 360px;
+        height: 360px;
+        margin: 20px;
+        background-color: #1f1f1f;
+        background-image: url(Resources/Behance-Logo.png);
+        background-size: cover;
+        box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+    }
+    .contact-behance:hover{
+        box-shadow: rgba(255, 255, 255, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+    }
+</style>
 <body>
-  <header class="header">
-    <div class="header-icon"></div>
-    <div class="header-text">The Ford Shelby Mustang GT350</div>
-  </header>
-
-  <section class="top-container">
-    <div class="love-letter">My personal Website to</div>
-    <div class="ford-shelby-headline">THE FORD SHELBY MUSTANG</div>
-    <div class="gt350-headline">GT350</div>
-  </section>
-
-  <section class="hook-container">
-    <div class="hook-text">
-      <h1>The GT350 is a blend of history and high-performance engineering.</h1>
-      <p>The GT350 nameplate has a rich history, dating back to the mid 1960s when Carroll Shelby transformed the Mustang into a track-ready machine. The modern GT350 pays homage to this heritage while incorporating contemporary technology and performance enhancements.</p>
+    <div class="header">
+        <div class="header-icon"></div>
+        <div class="header-text">The Ford Shelby Mustang GT350</div>
     </div>
-    <a href="Resources/2 Shelby Mustang.png" target="_blank">
-      <div class="hook-image image-card"></div>
-    </a>
-  </section>
-
-  <div class="section-title"><h1>Design and Features</h1></div>
-  <section class="design-features-container">
-    <div class="feature-block">
-      <a href="Resources/3 Shelby Mustang.png" target="_blank">
-        <div class="feature-image image-card" style="background-image: url(Resources/3\ Shelby\ Mustang.png);"></div>
-      </a>
-      <h2>Exterior</h2>
-      <p>The GT350 features an aggressive and aerodynamic design, with a prominent front grille, hood vents, and a rear spoiler.</p>
+    <div class="top-container">
+        <div class="love-letter">
+            My personal Website to
+        </div>
+        <div class="ford-shelby-headline">
+            THE FORD SHELBY MUSTANG
+        </div>
+        <div class="gt350-headline">
+            GT350
+        </div>
     </div>
-    <div class="feature-block">
-      <a href="Resources/4 Shelby Mustang.png" target="_blank">
-        <div class="feature-image image-card" style="background-image: url(Resources/4\ Shelby\ Mustang.png);"></div>
-      </a>
-      <h2>Interior</h2>
-      <p>Inside, you'll find a driver-focused cockpit with Recaro sport seats, a flat-bottom steering wheel, and performance gauges.</p>
+    <div class="hook-container">
+        <div class="hook-text">
+            <h1>
+                The GT350 is a blend of history and high-performance engineering.
+            </h1>
+            <p>The GT350 nameplate has a rich history, dating back to the mid
+                1960s when Carroll Shelby transformed the Mustang into a track
+                ready machine. The modern GT350 pays homage to this heritage
+                while incorporating contemporary technology and performance
+                enhancements.
+            </p> 
+        </div>
+        <a href="Resources/2 Shelby Mustang.png" target="_blank"><div class="hook-image"></div></a>
     </div>
-    <div class="feature-block">
-      <a href="Resources/5 Shelby Mustang.png" target="_blank">
-        <div class="feature-image image-card" style="background-image: url(Resources/5\ Shelby\ Mustang.png);"></div>
-      </a>
-      <h2>Suspension</h2>
-      <p>The car is equipped with a MagneRide adaptive suspension system, providing a smooth yet responsive ride.</p>
+    <div class="design-features-headline">
+        Design and Features
     </div>
-  </section>
-
-  <section class="engine-performance-container">
-    <div class="engine-performance-text">
-      <h1>Engine and Performance</h1>
-      <p>The 2017 Ford Shelby Mustang GT350 features a 5.2-liter naturally aspirated V8 engine, producing 526 horsepower and 429 lb-ft of torque. Its flat-plane crankshaft allows for a higher redline of 8,250 RPM, offering quick throttle response and a distinctive sound. The engine is paired with a 6-speed manual Tremec 3160 transmission and a dry sump oil system for better cooling and performance.</p>
+    <div class="design-features-container">
+        <div class="design-features-exterior">
+            <a href="Resources/3 Shelby Mustang.png" target="_blank"><div class="design-features-exterior-image"></div></a>
+            <div class="design-features-exterior-text">
+                <h1>Exterior</h1>
+                <p>The GT350 features an aggressive and
+                   aerodynamic design, with a prominent front
+                   grille, hood vents, and a rear spoiler.
+                </p>
+            </div>
+        </div>
+        <div class="design-features-interior">
+            <a href="Resources/4 Shelby Mustang.png" target="_blank"><div class="design-features-interior-image"></div></a>
+            <div class="design-features-interior-text">
+                <h1>Interior</h1>
+                <p>Inside, you'll find a driver-focused cockpit with
+                   Recaro sport seats, a flat-bottom steering
+                   wheel, and performance gauges.
+                </p>
+            </div>
+        </div>
+        <div class="design-features-suspention">
+            <a href="Resources/5 Shelby Mustang.png" target="_blank"><div class="design-features-suspention-image"></div></a>
+            <div class="design-features-suspention-text">
+                <h1>Suspention</h1>
+                <p>The car is equipped with a MagneRide
+                   adaptive suspension system, providing a
+                   smooth yet responsive ride.
+                </p>
+            </div>
+        </div>
     </div>
-    <a href="Resources/6 Shelby Mustang.png" target="_blank">
-      <div class="engine-performance-image image-card"></div>
-    </a>
-  </section>
-
-  <section class="aero-container">
-    <div class="aero-item1"></div>
-    <div class="aero-text">Aggressive and aerodynamic design, with a prominent front grille, and a rear spoiler.</div>
-    <div class="aero-item2"></div>
-  </section>
-
-  <section class="heritage-container">
-    <div class="heritage-headline"><h1>Heritage</h1></div>
-    <div class="heritage-text">Dating back to the mid-1960s when Carroll Shelby transformed the Mustang into a track-ready machine.</div>
-    <div class="heritage-text">The modern GT350 pays homage to this heritage while incorporating enhancements.</div>
-  </section>
-
-  <section class="contact">
-    <div class="contact-headline">Contact and Sources</div>
-    <div class="contact-container">
-      <a href="https://www.ford.com/performance/gt350/" target="_blank"><div class="contact-link image-card shelby"></div></a>
-      <a href="https://www.instagram.com/ibglahr/" target="_blank"><div class="contact-link image-card instagram"></div></a>
-      <a href="https://www.ibg-lahr.de/" target="_blank"><div class="contact-link image-card ibg"></div></a>
-      <a href="https://www.behance.net/gallery/212543503/Ford-Shelby-GT350" target="_blank"><div class="contact-link image-card behance"></div></a>
+    <div class="engine-performance-container">
+        <div class="engine-performance-text">
+            <h1>Engine and Performance</h1>
+            <p>The GT350 is equipped with a naturally aspirated 5.2-liter 
+                V8 engine known as the "Voodoo." This engineproduces around 
+                526 horsepower and 429 lb-ft of torque.
+            </p>
+        </div>
+        <a href="Resources/6 Shelby Mustang.png" target="_blank"><div class="engine-performance-image"></div></a>
     </div>
-  </section>
+    <div class="aggressive-aerodynamic-design-container">
+        <div class="aggressive-aerodynamic-design-item1">
+            <div class="aggressive-aerodynamic-design-exhaust"></div>
+            <div class="aggressive-aerodynamic-design-text">
+                Aggressive and aerodynamic design, with a prominent frontgrille, 
+                hood vents, and a rear spoiler.
+            </div>
+        </div>
+        <div class="aggressive-aerodynamic-design-item2"></div>
+    </div>
+    <div class="heritage-container">
+        <div class="heritage-headline">Heritage</div>
+        <div class="carroll-shelby-text">
+            Dating back to the mid-1960s 
+            when Carroll Shelby transformed the Mustang into a track-ready machine. 
+        </div>
+        <div class="modern-homage-text">
+            The modern GT350 pays homage to thisheritage while incorporating 
+            contemporary enhancements.
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact-headline">Contact and Sources</div>
+        <div class="contact-container">
+            <a href="https://www.ford.com/performance/gt350/" target="_blank"><div class="contact-shelby"></div></a>
+            <a href="https://www.instagram.com/ibglahr/" target="_blank"><div class="contact-instagram"></div></a>
+            <a href="https://www.ibg-lahr.de/" target="_blank"><div class="contact-ibg"></div></a>
+            <a href="https://www.behance.net/gallery/212543503/Ford-Shelby-GT350" target="_blank"><div class="contact-behance"></div></a>
+        </div>
+    </div>
 </body>
 </html>
