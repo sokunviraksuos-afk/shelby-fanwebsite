@@ -1,15 +1,15 @@
 # Shelby Fansite
 
-This is a simple static HTML fansite dedicated to **the Shelby gt350** 💙  
+This is a simple static HTML fansite dedicated to **the Shelby gt350**  
 It’s built with basic HTML (and a few supporting files like CSS, images, etc.) and doesn’t use any frameworks or backend code.
 
-## 📁 Project Overview
+## Project Overview
 
 - Static HTML website  
 - No JavaScript frameworks or build tools  
 - Meant to be lightweight and easy to view  
 
-## 🚀 How to View the Website
+## How to View the Website
 
 You have two options:
 
@@ -18,7 +18,7 @@ You have two options:
 2. Make sure **all files and folders** stay together (HTML, CSS, images, etc.).
 3. Open the main HTML file (index.html) in your web browser.
 
-That’s it — no setup required.
+That’s it, nothing else required.
 
 ### Option 2: View Online
 You can also view the website online using this link:
